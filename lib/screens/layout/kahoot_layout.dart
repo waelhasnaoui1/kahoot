@@ -1,32 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kahoot/screens/layout/cubit/cubit.dart';
+import 'package:kahoot/screens/layout/cubit/states.dart';
 
-class KahootLayout extends StatefulWidget {
-  const KahootLayout({Key key}) : super(key: key);
+class KahootLayout extends StatelessWidget {
 
-  @override
-  _KahootLayoutState createState() => _KahootLayoutState();
-}
-
-class _KahootLayoutState extends State<KahootLayout> {
   int selecetedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: selecetedIndex,
-        onTap: (index){
-          setState(() {
-            selecetedIndex = index ;
-          });
-        },
-        selectedItemColor: Colors.amber[800],
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Colors.black,),label: 'home'),
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Colors.black,),label: 'home'),
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Colors.black,),label: 'home'),
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Colors.black,),label: 'home'),
-        ],
-      ),
+    return BlocConsumer<KahootCubit,KahootStates>(
+      listener: (context,state){
+
+      },
+      builder: (context,state){
+        return Scaffold(
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: KahootCubit.get(context).currentIndex,
+            onTap: (index){
+              KahootCubit.get(context).changeBotomNav(index);
+            },
+            selectedItemColor: Colors.amber[800],
+            items: [
+              BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Colors.black),label: 'Accueil'),
+              BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Colors.black),label: 'Découvrir'),
+              BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Colors.black),label: 'Code Pin'),
+              BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Colors.black),label: 'Créer'),
+            ],
+          ),
+          body:KahootCubit.get(context).screens[KahootCubit.get(context).currentIndex] ,
+        );
+      },
     );
   }
 }
