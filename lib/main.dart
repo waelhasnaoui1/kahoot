@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:kahoot/screens/layout/cubit/cubit.dart';
 import 'package:kahoot/screens/layout/cubit/states.dart';
 import 'package:kahoot/screens/layout/kahoot_layout.dart';
+import 'package:kahoot/screens/login/login_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget
 
             themeMode: ThemeMode.light,
             //themeMode: AppCubit.get(context).isDark ? ThemeMode.dark : ThemeMode.light,
-            home: KahootLayout(),
+            home: LoginScreen(),
           );
         },
       ),

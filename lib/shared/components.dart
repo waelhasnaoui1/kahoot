@@ -9,14 +9,14 @@ void navigateTo(context,widget)
   ),
 );
 
-Widget defaultFormField (@required TextInputType type) =>
+Widget defaultFormField (@required TextInputType type,String hint) =>
     TextFormField(
       keyboardType: TextInputType.name,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(vertical: 10.0,horizontal: 20),
         suffix: Icon(Icons.vpn_key),
         border: OutlineInputBorder(),
-        hintText: 'Entrez le code',
+        hintText: hint,
 
       ),
     );

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "180829943387",
+    "project_id": "deep-ground-304319",
+    "storage_bucket": "deep-ground-304319.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180829943387:android:f31ad298f34fef8145b17e",
+        "android_client_info": {
+          "package_name": "com.example.kahoot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180829943387-i5bg1ri10ji51prkpahcemdlf4pl0rdv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkJgBsWY655a0jJdP7d2iAbqwtZFn8ySE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180829943387-i5bg1ri10ji51prkpahcemdlf4pl0rdv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
